@@ -1,0 +1,11 @@
+import sqllite3
+conn=sqllite3.connect('python.db')
+cur=conn.cursor()
+cur.execute("""CREATE TABLE student(id int,name, varchar(20))""")
+cur.execute("""INSERT INTO student VALUES(101,'NAMAN')""")
+cur.execute("""INSERT IN TO student VALUES(102,'PRAVEEN')""")
+cur.execute("""INSERT IN TO student VALUES(103,'MINA')""")
+res=cur.execute("""SELECT * FROM student""")
+print(res.fetchall())
+conn.commit()
+conn.close()
